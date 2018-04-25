@@ -1,0 +1,19 @@
+#btns {
+	background-color: aquamarine;
+	height: 140px;
+}
+
+#selection {
+	display: inline-block;
+	background-color: cornflowerblue;
+	height: 670px;
+	width: 990px;
+}
+
+#add-show {
+	float: right;
+	background-color: salmon;
+	height: 670px;
+	width: 450px;
+
+}
