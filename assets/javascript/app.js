@@ -1,7 +1,7 @@
 const topics = ["Bob's Burgers", "Family Guy", "New Girl", "Blackish", "Broad City", "Saturday Night Live", "Insecure", "Napoleon Dynamite", "22 Jump Street", "Mean Girls"];
 
 for (let i = 0; i < topics.length; i++) {
-	const topicBtn = $("<button>");
+	const topicBtn = $("<button class='title'>");
 
 	topicBtn.addClass("btn btn-primary");
 
@@ -14,11 +14,13 @@ for (let i = 0; i < topics.length; i++) {
 
 const APIKey = "u6mBkPzGeHf1sNS42hLwSYkGRQ2PY04c";
 
-$("button").on("click", function() {
+function searchTitle(title) {
+
+}
+
+$(".title").on("click", function() {
 	
 	const title = $(this).attr("title");
-
-	console.log(title);
 
 	const queryURL = "http://api.giphy.com/v1/gifs/search?q=" + title + "&api_key=" + APIKey + "&limit=10";
 
@@ -38,14 +40,43 @@ $("button").on("click", function() {
 				const r = $("<p>").text("Rating: " + rating);
 
 				const gifImage = $("<img>");
+				
+				gifImage.attr({
+					"src":results[i].images.fixed_height_still.url, 
+					"data-still":results[i].images.fixed_height_still.url, 
+					"data-animate":results[i].images.fixed_height.url,
+					"data-state":"still",
+					"class":"gif"
+				});
 
-				gifImage.attr("src", results[i].images.fixed_height.url);
-
-				gifDiv.append(r);
 				gifDiv.append(gifImage);
+				gifDiv.append(r);
 
 				$("#selection").prepend(gifDiv);
 			}
 		}
 	});
+});
+
+// $(".gif").on("click", function() {
+// 	alert("Hi!");
+	// const state = $(this).attr("data-state");
+
+	// if (state === "still") {
+	// 	$(this).attr("src", $(this).attr("data-animate"));
+	// 	$(this).attr("data-state", "animate");
+	// } else {
+	// 	$(this).attr("src", $(this).attr("data-still"));
+	// 	$(this).attr("data-state", "still");
+	// }
+// });
+
+
+$("#search-title").on("click", function(event) {
+
+	event.preventDefault();
+
+	const inputTitle = $("#title-input").val().trim();
+
+	searchTitle(inputTitle);
 });

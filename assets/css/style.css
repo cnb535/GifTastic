@@ -1,33 +1,66 @@
+.btn:focus {
+	box-shadow: 0 0 0 0.2rem #87919980;
+}
+
+.btn-outline-secondary {
+	color: #fff;
+	background-color: #879199;
+	border-color: #879199;
+}
+
+.btn-outline-secondary:hover {
+	color: #879199;
+	background-color: #fff;
+	border-color: #879199;
+}
+
 .btn-primary {
 	background-color: #e57567;
-	border-color: #e57567;
+	border-color: #ce695c;
 	margin: 5px;
 }
 
-/*.btn, btn-primary {
+.btn-primary:hover {
+	color: #e57567;
+	background-color: #fff;
+	border-color: #f1f1f1;
+}
 
-}*/
+.btn-primary:focus {
+	box-shadow: 0 0 0 0.2rem #ce695c80;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+	background-color: #e57567;
+	border-color: #ce695c;	
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus{
+	box-shadow: 0 0 0 0.2rem #ce695c80;	
+}
 
 .container-fluid {
 	padding: 0px;
 }
 
 #btns {
-	background-color: aquamarine;
+	background-color: #879199;
 	height: 140px;
+	padding: 5px;
 }
 
 #selection {
 	display: inline-block;
-	background-color: cornflowerblue;
 	height: 670px;
-	width: 990px;
+	width: 75%;
+	padding: 15px;
 }
 
 #add-show {
 	float: right;
 	background-color: salmon;
 	height: 670px;
-	width: 445px;
+	width: 25%;
+	padding: 15px;
 }
 
